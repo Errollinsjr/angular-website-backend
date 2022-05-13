@@ -1,4 +1,5 @@
 import Hapi from '@hapi/hapi';
+import routes from './routes';
 
 const start = async () => {
     const server = Hapi.server({
@@ -6,15 +7,7 @@ const start = async () => {
         host: 'localhost',
     });
 
-    //h is a response toolKit
-    //whatever we return is sent back to client as response
-    server.route({
-        method: 'GET',
-        path: '/hello',
-        handler: (req, h) => {
-            return h.response('Hello!').code(201);
-        }
-    })
+    routes.forEach(route => server.route(route));
 
     await server.start();
     console.log(`Server is listeining on ${server.info.uri}`);
