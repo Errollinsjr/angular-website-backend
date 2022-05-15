@@ -21,7 +21,8 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@hapi/boom": "^10.0.0",
-    "@hapi/hapi": "^20.2.2"
+    "@hapi/hapi": "^20.2.2",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
